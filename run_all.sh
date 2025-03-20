@@ -1,9 +1,15 @@
 #!/bin/bash
 
-# Function to kill all background jobs on exit
+# ========================
+# ROS2 Startup Script
+# - Static TF Publishing
+# - Launching rqt_runtime_monitor
+# - Launching Autoware (with logs)
+# ========================
+
+# Function to stop all background jobs on exit
 cleanup() {
   echo "Stopping all background jobs..."
-  # Kill all background jobs
   for pid in "${pids[@]}"; do
     kill "$pid"
   done
@@ -13,17 +19,36 @@ cleanup() {
 # Trap SIGINT (Ctrl+C) and call cleanup
 trap cleanup SIGINT
 
-# Run the first static transform publisher from map to odom
+# Array to store process IDs
+pids=()
+
+# ------------------------
+# Static TF Publishing
+# ------------------------
+
+# map → odom
 ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 map odom &
-pids[0]=$!
+pids+=($!)
 
-# Run the second static transform publisher from odom to base_link
+# odom → base_link
 ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 odom base_link &
-pids[1]=$!
+pids+=($!)
 
-# Run rqt_runtime_monitor
+# ------------------------
+# Launch rqt_runtime_monitor
+# ------------------------
+
 ros2 run rqt_runtime_monitor rqt_runtime_monitor &
-pids[2]=$!
+pids+=($!)
+
+# ------------------------
+# Launch Autoware (Foreground Execution)
+# ------------------------
+
+ros2 launch autoware_launch autoware.launch.xml \
+  vehicle_model:=beamng_vehicle \
+  sensor_model:=beamng_sensor_kit \
+  map_path:=/home/apollo-22/Documents/autoware/autoware_map/c1/scenario_02
 
 # Wait for all background jobs to complete
 wait
