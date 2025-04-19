@@ -41,7 +41,7 @@ repositories:
   universe/autoware.universe:
     type: git
     url: https://github.com/peregrine-884/custom_autoware.universe.git
-    version: whill
+    version: rover
   universe/external/tier4_ad_api_adaptor: # TODO(TIER IV): Improve design/code and transfer to AWF
     type: git
     url: https://github.com/tier4/tier4_ad_api_adaptor.git
@@ -90,7 +90,7 @@ repositories:
   launcher/autoware_launch:
     type: git
     url: https://github.com/peregrine-884/custom_autoware_launch.git
-    version: whill
+    version: rover
   # sensor_component
   sensor_component/external/sensor_component_description:
     type: git
@@ -135,27 +135,23 @@ repositories:
   #  type: git
   #  url: https://github.com/autowarefoundation/single_lidar_sensor_kit_launch.git
   #  version: main
-  sensor_kit/whill_sensor_kit_launch:
+  sensor_kit/canedudev_rover_sensor_kit_launch:
     type: git
     url: https://github.com/peregrine-884/custom_sensor_kit_launch.git
-    version: whill
+    version: rover
   # vehicle
   #vehicle/sample_vehicle_launch:
   #  type: git
   #  url: https://github.com/autowarefoundation/sample_vehicle_launch.git
   #  version: main
-  vehicle/whill_vehicle_launch:
+  vehicle/canedudev_rover_vehicle_launch:
     type: git
     url: https://github.com/peregrine-884/custom_vehicle_launch.git
-    version: whill
-  vehicle/ros2_whill:
+    version: rover
+  vehicle/external/canedudev_rover_vehicle_interface:
     type: git
-    url: https://github.com/whill-labs/ros2_whill.git
-    version: humble
-  vehicle/ros2_whill_interfaces:
-    type: git
-    url: https://github.com/whill-labs/ros2_whill_interfaces.git
-    version: humble
+    url: https://github.com/iASL-Gifu/canedudev_rover_vehicle_interface
+    version: release/2025.02
   #vehicle/external/pacmod_interface:
   #  type: git
   #  url: https://github.com/tier4/pacmod_interface.git
