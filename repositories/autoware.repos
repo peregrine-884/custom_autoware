@@ -120,6 +120,10 @@ repositories:
     type: git
     url: https://github.com/tier4/sensor_component_description.git
     version: 03ba094851ec90febfcfc0adb20b64b0e19df7a8
+  sensor_component/external/bluespace_ai_xsens_ros_mti_driver:
+    type: git
+    url: https://github.com/bluespace-ai/bluespace_ai_xsens_ros_mti_driver.git
+    version: ros2_0_galactic
   sensor_component/external/nebula:
     type: git
     url: https://github.com/tier4/nebula.git
