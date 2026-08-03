@@ -1,5 +1,8 @@
 # Autoware - the world's leading open-source software project for autonomous driving
 
+> このファイルは、このカスタムリポジトリの基になったAutoware公式READMEです。
+> Jetson向けのインストール方法は、[custom_autoware利用ガイド](README_JETSON.md)を参照してください。
+
 ![Autoware_RViz](https://user-images.githubusercontent.com/63835446/158918717-58d6deaf-93fb-47f9-891d-e242b02cba7b.png)
 
 <!--- Contributors -->
