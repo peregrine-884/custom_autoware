@@ -109,6 +109,12 @@ repositories:
     url: https://github.com/autowarefoundation/managed_transform_buffer.git
     version: 0.2.0
 
+  # vehicle
+  vehicle/external/scout_ros2:
+    type: git
+    url: https://github.com/agilexrobotics/scout_ros2.git
+    version: humble
+
   # launcher
   launcher/autoware_launch:
     type: git
