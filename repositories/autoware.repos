@@ -112,7 +112,7 @@ repositories:
   # vehicle
   vehicle/external/scout_ros2:
     type: git
-    url: https://github.com/agilexrobotics/scout_ros2.git
+    url: https://github.com/iASL-Gifu/scout_ros2.git
     version: humble
 
   # launcher
