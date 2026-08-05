@@ -110,10 +110,14 @@ repositories:
     version: 0.2.0
 
   # vehicle
-  launcher/custom_autoware_launch/vehicle/scout_ros2:
+  launcher/custom_autoware_launch/vehicle/external/scout_ros2:
     type: git
     url: https://github.com/iASL-Gifu/scout_ros2.git
     version: humble
+  launcher/custom_autoware_launch/vehicle/external/ugv_sdk:
+    type: git
+    url: https://github.com/westonrobot/ugv_sdk.git
+    version: main
 
   # launcher
   launcher/autoware_launch:
