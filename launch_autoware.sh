@@ -5,7 +5,6 @@ set -Ee -o pipefail
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 MAPS_DIR="${AUTOWARE_MAPS_DIR:-${HOME}/autoware_data/maps}"
 LAUNCH_FILE="${AUTOWARE_LAUNCH_FILE:-autoware.launch.xml}"
-CAN_INTERFACE="${AUTOWARE_CAN_INTERFACE:-can0}"
 SCOUT_SCRIPTS_DIR="$SCRIPT_DIR/src/launcher/autoware_launch/vehicle/external/scout_ros2/scripts"
 
 die() {
@@ -37,17 +36,13 @@ choose_item() {
 }
 
 setup_agilex_can() {
-  local reset_script="$SCOUT_SCRIPTS_DIR/reset_can.sh"
-  local connect_script="$SCOUT_SCRIPTS_DIR/connect_can.sh"
+  local can_script="$SCOUT_SCRIPTS_DIR/scout_mini_can.sh"
 
-  [[ -x "$reset_script" ]] ||
-    die "CANリセットスクリプトを実行できません: $reset_script"
-  [[ -x "$connect_script" ]] ||
-    die "CAN接続スクリプトを実行できません: $connect_script"
+  [[ -x "$can_script" ]] ||
+    die "SCOUT MINI CANスクリプトを実行できません: $can_script"
 
-  printf '\nAgileX用CAN (%s) をセットアップします。\n' "$CAN_INTERFACE"
-  "$reset_script" "$CAN_INTERFACE"
-  "$connect_script" "$CAN_INTERFACE"
+  printf '\nSCOUT MINI用CANをセットアップします。\n'
+  "$can_script"
 }
 
 # Always use the Autoware workspace that contains this launcher.
