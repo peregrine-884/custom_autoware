@@ -142,4 +142,5 @@ fi
 exec ros2 launch autoware_launch "$LAUNCH_FILE" \
   "vehicle_model:=$vehicle_model" \
   "sensor_model:=$sensor_model" \
-  "map_path:=$map_path"
+  "map_path:=$map_path" \
+  2>&1 | tee autoware.log
