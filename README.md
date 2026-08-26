@@ -60,6 +60,9 @@ Autoware is an open-source software stack for self-driving vehicles, built on th
 
 To learn more about using or developing Autoware, refer to the [Autoware documentation site](https://autowarefoundation.github.io/autoware-documentation/main/). You can find the source for the documentation in [autowarefoundation/autoware-documentation](https://github.com/autowarefoundation/autoware-documentation).
 
+For this fork, see [Jetson AGX Orin setup](docs/jetson-agx-orin-setup.md) for the
+native Ubuntu 22.04 / ROS 2 Humble installation and build procedure.
+
 ## Repository overview
 
 - [autowarefoundation/autoware](https://github.com/autowarefoundation/autoware)
